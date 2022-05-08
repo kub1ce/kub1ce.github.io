@@ -81,6 +81,11 @@ body{
     height: auto;
     padding: 2%;;
 }
+@media (orientation: portrait) and (min-width: 900px){
+    #main {
+        width: 100%;
+    }
+}
 #select-module {
     padding: auto;
     font-size: 20px;
