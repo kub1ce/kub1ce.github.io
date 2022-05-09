@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="charset" content="utf-8">
+		<link rel='stylesheet' type='text/css' href='BeatifulKubik.css'>
+		<title>Kubik</title>
+		<link rel="icon" href="https://media.discordapp.net/attachments/917983892458324071/918906788865269840/20210929_150812.png?width=586&height=586" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div id='title_icon'>
+			<img alt="Kubik Bot Discord" src='https://media.discordapp.net/attachments/891651883289182268/894272992933212261/IMG_20211003_202117.png'  width=100%>
+		</div>
+		<div class='navig'>
+			<nav id='naving_nav'>
+			<ul id='navig_ul'>
+				<li id='linav'><a href="#" onclick="change_naving('modules')" text='Модули' id='linava'>Модули</a></li>
+				<li id='linav'><a href="#" onclick="change_naving('news')" text='Новости' id='linava'>Новости</a></li>
+				<li id='linav'><a href="#" onclick="change_naving('info')" text='Инфо' id='linava'>Инфо</a></li>
+			</ul>
+			<nav>
+		</div>
+        <div id="main">
+            <div id="modules"  style="display: none;">
+                <select id="select-module" size="1" onchange="change_module(value)">
+                    <option value="M">Модерация</option>
+                    <option value="Y">Утилиты</option>
+                    <option value="F">Фан</option>
+                    <option value="R">РП</option>
+                    <option value="I">Информация</option>
+                    <option value="E">Экономика</option>
+                    <option value="S">Настройки</option>
+                </select>
+                <div id="MCM"><h1>Выберите модуль. . . </h1></div>
+                <div id="MM" style="display: none;">
+                    <h1>Модерация</h1>
+                    <p><span class="com" data-tooltip="clear <количество  cообщений>">clear</span> – очистить сообщения из чата</p>
+                    <p><span class="com" data-tooltip="mute <user>">mute</span> – запретить пользователю писать в данном текстовом канале</p>
+                    <p><span class="com" data-tooltip="unmute <user>">unmute</span> – разрешить пользователь писать в данном текстовом канале</p>
+                    <p><span class="com" data-tooltip="kick <user>">kick</span> – выгнать пользователя из сервера</p>
+                    <p><span class="com" data-tooltip="ban <user>">ban</span> – забанить пользователя на данном сервере</p>
+                    <p><span class="com" data-tooltip="audit <on / of> <moderation / economy / inventory> <канал>">audit</span> – настройка логгирования на сервере</p>
+                    <p><span class="com" data-tooltip="perms <параметр> <t / f>">perms</span> – установить права в данном текстовом канале для роли по умолчанию</p>
+                </div>
+                <div id="MY" style="display: none;">
+                    <h1>Утилиты</h1>
+                    <p><span class="com" data-tooltip="say <сообщение>">say</span> – отправить сообщение от лица бота</p>
+                    <p><span class="com" data-tooltip="embed">embed</span> – удобный конструктор embed-сообщений</p>
+                    <p><span class="com" data-tooltip="random <начало промежутка> <конец промежутка>">random</span> – случайное число в заданном промежутке</p>
+                    <p><span class="com" data-tooltip="random-word <слово 1> [слово 2] [слово 3] ...">random-word</span> – случайно выбранное слово из заданного списка</p>
+                    <p><span class="com" data-tooltip="callendar <месяц> [год]">callendar</span> – календарь</p>
+                    <p><span class="com" data-tooltip="calculator">calculator</span> – калькулятор</p>
+                    <p><span class="com" data-tooltip="poll <текст>">poll</span> – устроить голосование(2 варианта выбора)</p>
+                    <p><span class="com" data-tooltip="bigpoll <число вариантов(от 1 до 9)> <текст>">bigpoll</span> – устроить голосование с множественным выбором вариантов(до 9ти)</p>
+                    <p><span class="com" data-tooltip="rules">rules</span> – примитивные правила для вашего сервера</p>
+                    <p><span class="com" data-tooltip="giveaway <канал> <id сообщения>">giveaway</span> – устроить розыгрыш(по реакциям под указанным сообщениям)</p>
+                    <p><span class="com" data-tooltip="bug <описание бага>">bug</span> – сообщить о баге разработчикам</p>
+                </div>
+                <div id="MF" style="display: none;">
+                    <h1>Фан</h1>
+                    <p><span class="com" data-tooltip="search">search</span> – найти "дурачка" на сервере</p>
+                </div>
+                <div id="MR" style="display: none;">
+                    <h1>РП</h1>
+                    <p><span class="com" data-tooltip="pusport [user]">pusport</span> – посмотреть паспорт участника / свой</p>
+                    <p><span class="com" data-tooltip="kiss <user>">kiss</span> – поцеловать пользователя</p>
+                    <p><span class="com" data-tooltip="custom <действие от 3го лица>">custom</span> – совершить кастомное действие</p>
+                    <p><span class="com" data-tooltip="edit-pusport <user> <новое значение кастомного параметра>">edit-pusport</span> – изменить значение кастомного параметра в команде pusport</p>
+                    <p><span class="com" data-tooltip="edit-pusport-params <текст¹>">edit-pusport-params</span> – установить текст¹ в команде pusport</p>
+                    <br>
+                    <p>1 - возможно использование специальных тэгов:</p>
+                    <ul>
+                        <li>{name} – имя пользователя</li>
+                        <li>{nickname} – никнейм пользователя на сервере. Если нет, то будет </li>
+                        <li>{id} – ID пользователя</li>
+                        <li>{joined} – число, когда пользователь зашёл на сервер</li>
+                        <li>{created} – число, когда пользователь создал аккаунт в Discord</li>
+                        <li>{custom1} – кастомная переменная для каждго пользователя. Настраивается в команде <span class="com">edit-pusport</span></li>
+                    </ul>
+                </div>
+                <div id="MI" style="display: none;">
+                    <h1>Информация</h1>
+                    <p><span class="com" data-tooltip="bot">bot</span> – информация о боте</p>
+                    <p><span class="com" data-tooltip="error">error</span> – список ошибок</p>
+                    <p><span class="com" data-tooltip="help [команда / модуль]">help</span> – список модулей бота и информация о его командах</p>
+                    <p><span class="com" data-tooltip="user [user]">user</span> – информация о пользователе</p>
+                    <p><span class="com" data-tooltip="server">server</span> – информация о сервере</p>
+                </div>
+                <div id="ME" style="display: none;">
+                    <h1>Экономика</h1>
+                    <h2>Деньги</h2>
+                    <span class="com" data-tooltip="work">work</span> – заработать денег</p>
+                    <span class="com" data-tooltip="balance [user]">balance</span> – посмотреть банковский счёт</p>
+                    <span class="com" data-tooltip="give-money <user> <ammount> [comment]">give-money</span> – передать денежные средства другому пользователю</p>
+                    <h2>Предметы</h2>
+                    <span class="com" data-tooltip="inventory [user]">inventory</span> – посмотреть инвентарь</p>
+                    <span class="com" data-tooltip="item <предмет>">item</span> – посмотреть предмет</p>
+                    <span class="com" data-tooltip="shop [страница]">shop</span> – посмотреть магазин предметов</p>
+                    <span class="com" data-tooltip="buy <предмет [количество]">buy</span> – купить предмет из магазина</p>
+                    <span class="com" data-tooltip="sell-item <user> [количество] <предмет>">sell-item</span> – продать предмет из вашего инвентаря другому пользователю</p>
+                    <span class="com" data-tooltip="use <предмет> [количество]">use</span> – использовать предмет из вашего инвентаря</p>
+                    <h2>Настройка</h2>
+                    <span class="com" data-tooltip="add-money <количество> [user]">add-money</span> – добавить денежные средства</p>
+                    <span class="com" data-tooltip="add-money-role <количество> <роль>">add-money-role</span> – добавить денежные средства пользователям, имеющим указанную роль</p>
+                    <p><span class ="com " data-tooltip ="remove-money <количество> [user]" >remove-money</span> – отнять денежные средства у указангого пользователя</p>
+                    <p><span class ="com " data-tooltip ="remove-money-role <количество> <роль>">remove-money-role</span> – отнять денежные средства у участников, имеющих указанную роль</p>
+                    <p><span class ="com " data-tooltip ="reset-economy" >reset-economy</span> – сбросить параметры экрномики к заводским настройкам</p>
+                    <p><span class ="com " data-tooltip ="reset-money <user>" >reset-money</span> – обнулить счёт пользователя</p>
+                    <span class="com" data-tooltip="set-value <знак валюты>">set-value</span> – установить новый знак валюты</p>
+                    <span class="com" data-tooltip="edit-work">edit-work</span> – изменить доход от команды <span class="com">work</span></p>
+                    <span class="com" data-tooltip="create-item <имя предмета>">create-item</span> – создать предмет</p>
+                    <span class="com" data-tooltip="edit-item">edit-item</span> – изменить предмет</p>
+                    <span class="com" data-tooltip="add-item <user> <предмет> [количество]">add-item</span> – добавить предмет в инвентарь пользователя</p>
+                    <span class="com" data-tooltip="remove-item <user> <предмет> [количество]">remove-item</span> – забрать предмет из инвентаря пользователя</p>
+                    <span class="com" data-tooltip="delete-item <предмет>">delete-item</span> – удалить предмет</p>
+                    <span class="com" data-tooltip="reset-items">reser-items</span> – удалить <b>все</b> предметы на сервере</p>
+                    <span class="com" data-tooltip="reset-inventory <user>">reset-inventory</span> – очистить инвентарь пользователя</p>
+                    <span class="com" data-tooltip="start-balance <количество>">start-balance</span> – установить изначальное количество денежных средств у новых пользователей на сервере</p>
+                </div>
+                <div id="MS" style="display: none;">
+                    <h1>Настройки</h1>
+                    <p><span class="com" data-tooltip="prefix <new prefix> [new prefix] [new prefix] ...">prefix</span> – сменить префикс бота на сервере</p>
+                    <p><span class="com" data-tooltip="join-message <канал> [текст¹]">join-message</span> – назначить приветственное сообщение</p>
+                    <p><span class="com" data-tooltip="bye-message <канал> [текст¹]">bye-message</span> – назначить прощальное сообщение</p>
+                    <p><span class="com" data-tooltip="voice">voice</span> – создать панель управления личными голосовыми каналами</p>
+                    <br>
+                    <p>1 - возможно использование специальных тэгов:</p>
+                    <ul>
+                        <li>{user} – имя пользователя</li>
+                        <li>{count} – количество пользователей на сервере</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div id="news"  style="display: none;">
+                <div>
+                    <h2 data-tooltip="9.5.2022"><span style="color: aqua">K U B İ C ≡</span>:</h2>
+                    <p>Я говорить красиво и правильно не умею, но могу сказать "С праздником"..<br>
+                        С праздником</p>
+                    <img src="https://c.tenor.com/AHWMdozvaEQAAAAd/9мая-по.gif" width="90%">
+                </div>
+                <hr>
+                <div class="News">
+                    <h2 data-tooltip="5.5.2022"><span style="color:aqua">K U B İ C ≡</span>: Патч <span class="Version">v2.3.GRN_34</span>:</h2>
+                    <p>Исправлен баг, когда при ожидании вашего сообщения, бот брал первое ваше сообщение из любого чата</p>
+                    <ul>
+                        <li>Боковой цвет панели изменён на прозрачный</li>
+                        <li>испрален баг с УЖАСНЕЙШИМ оформлением правил команды rules</li>
+                        <li>Помните глобал-чат? А он ВЕРНУЛСЯ</li>
+                    </ul>
+                    <h3 style="color: cornflowerblue;">Global-Chat</h3>
+                    <ul>
+                        <li>Возможность общения несколькими серверами одновременно</li>
+                        <li>Увеличение актива</li>
+                        <li>Возможные персмективы¹</li>
+                        <br>
+                        1 - в скором будущем добавим поддержку файлов, возможность  самостоятельно добавлять и удалять свой сервер и многое другое :D
+                    </ul>
+                    <i>чтобы подключить/отключить глобал-чат к вам на сервер обратитесь к администрации бота. Это временно.</i>
+                    <img src="https://clck.ru/gv4CW" width="100%">
+                    <img src="https://clck.ru/gv4Cr">
+                </div>
+                <hr>
+                <div class="News">
+                    <h2 data-tooltip="4.5.2022"><span style="color:aqua">K U B İ C ≡</span>: Патч <span class="Version">v2.3.NDCiV01</span>:</h2>
+                    <ul>
+                        <li>Теперь все сообщения из каналов с панелью управления войсами удаляются</li>
+                        <li>исправлен баг с некорректным отображением статуса бота(теперь реально стримит)</li>
+                    </ul>
+                    <img src="https://clck.ru/gv4Ha" width="100%">
+                </div>
+                <hr>
+                <div class="News">
+                    <h2 data-tooltip="11.04.2022"><span style="color:aqua">Velsonovskiy</span>:</h2>
+                    <p>Поскольку, вроде как, проблемы версии 2.1 решены, разработчик решил взять небольшой отпуск. Надеюсь, он придёт с интересными идеями и задумками</p>
+                    <img src="https://tenor.com/view/baby-yoda-love-cute-gif-24697418.gif">
+                </div>
+            </div>
+
+
+            
+            <div id="info">
+                <h3><img src="https://media.discordapp.net/attachments/891651883289182268/972376433261436988/20210929_150812.png" alt="Kubik" width="3%"> <span style="font-size: 18px;">Kubik</span> –  многофункциональный бот который сможет облегчить вам работу над сервером и развлечёт ваше сообщество.</h3>
+                <u><h2>Разработчики:</h2></u>
+                <ul>
+                <h2 data-tooltip="Главный разработчик бота:D">K U B İ C ≡<span style="color:gray">#4984</span></h2>
+                <h2 data-tooltip="Комьюнити-менеджер">Velsonovskiy<span style="color:gray">#0024</span></h2>
+                </ul>
+                <hr>
+                <u><h2>Полезные ссылки:</h2></u>
+                <ul>
+                    <h2 onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=784052186220199956&permissions=8&scope=bot')">Добавить бота <span style="color: aqua;">Kubik</span> на сервер</h2>
+                    <h2 onclick="window.open('https://discord.gg/nXFTME2TUU')">Зайти на <span style="color: aqua">Сервер Поддержки</span> бота</h2>
+                    <h2 onclick="window.open('')" data-tooltip="Вы уже здесь :D">Перейти на <span style="color:aqua">Сайт</span> бота</h2>
+                </ul>
+            </div>
+        </div>
+		<div class='brdr'></div>
+		<div class='button-shadow'>
+			<button class='Button' onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=784052186220199956&permissions=8&scope=bot')">Добавить на сервер</button>
+			<button class='Button' onclick="window.open('https://discord.gg/nXFTME2TUU')">Поддержка</button>
+		</div>
+        <div id="edit-background">
+            <!-- Здесь сделать изменение бэкграунда: темный, светлый, градиент -->
+            <select onchange="edit_background(value)">
+                <option value="dark">Темная</option>
+                <option value="light">Светлая</option>
+                <option value="Vels">Velsonovskiy</option>
+            </select>
+        </div>
+	</body>
+    <script src="GeniusKubik.js"></script>
+</html>

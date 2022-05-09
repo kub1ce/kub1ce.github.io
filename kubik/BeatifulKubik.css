@@ -1,0 +1,162 @@
+body{
+	background-color: #1a1a1a;
+    font-family: 'Nunito', sans-serif;
+	/*background: linear-gradient(to top, #693ABB, #C93ED3);*/
+	/* background-image: url(https://media.discordapp.net/attachments/917983892458324071/918906788865269840/20210929_150812.png?width=586&height=586); */
+	background-repeat: no-repeat;
+	color: white;
+	background-position: center;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+#title_icon{
+	position: center;
+	size: 100%;
+}
+.navig{
+	display: flex;
+	/* min-height: 5vh; */
+	justify-content: center;
+	font-family: 'Comfortaa', cursive;
+}
+#naving_nav{
+	background-color: #b5bab05e;
+	font-weight: bold;
+	font-size: 1.2rem;
+	border-radius: 2rem;
+	border: 2px white solid;
+	padding: 0 2rem;
+}
+#naving_nav #navig_ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#naving_nav #navig_ul #linav{
+	display: inline-block;
+	margin: 0 10px;
+	position: relative;
+}
+#naving_nav #navig_ul #linav #linava{
+	display: block;
+	height: 50px;
+	width: 100px;
+	text-align: center;
+	line-height: 50px;
+	color: inherit;
+	text-decoration: none;
+	position: relative;
+}
+#naving_nav #navig_ul #linav #linava:before{
+	content: attr(text);
+	display: block;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to top left, #00D3AEFF, #8BFF03FF);
+	transform: rotateX(-270deg);
+	transform-origin: top;
+	transition: 0.5s;
+	text-shadow: 1px 1px 2px black, 0 0 1em lime;
+}
+#naving_nav #navig_ul #linav #linava:hover:before{
+	transform: rotateX(0deg);
+}
+.brdr{
+	display: flex;
+	min-height: 10vh;
+	justify-content: center;
+}
+#main {
+    border: 2px solid #fff;
+    border-radius: 2em;
+    background-color: #ffffff50;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 50%;
+    padding: 2%;;
+}
+@media (orientation: portrait) and (min-width: 900px){
+    #main {
+        width: 100%;
+    }
+}
+#select-module {
+    padding: auto;
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 1em;
+    color: #fff;
+    background: none repeat scroll 0 0 #444444;
+}
+.com {
+    font-size: 20px;
+    text-shadow: #3CE6E0;
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: auto; /* Ширина подсказки */
+    padding: auto;
+    /* left: 0; top: 0; Положение подсказки */
+    background: #737373; /* Синий цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+    border: 1px solid rgb(152, 152, 152);
+    border-radius: 1em;
+}
+[data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    /* top: 2em; Положение подсказки */
+}
+.Version {
+    color: rgb(54, 54, 54)
+}
+.button-shadow{
+	position: relative;
+	text-align: center;
+	
+}
+.Button:hover{
+	box-shadow: 0 8px 65px -5px #3CE6E0	;
+}
+.Button{
+	letter-spacing: 2px;
+	font-size: 22px;
+	line-height: 68px;
+	text-transform: uppercase;
+	background: #01CDC5;
+	color: #ffffff;
+	border: none;
+	border-radius: 10px;
+	min-width: 200px;
+	padding: 0 24px;
+	box-shadow: 0 10px 60px -10px #008782;
+	cursor: pointer;
+	transform: perspective(250px) scale3d(1, 1, 1);
+	transition: all 1s cubic-beziger(0.03, 0.98, 0.52, 0.99);
+	outline: none;
+}
+.brdr2 {
+	display: flex;
+	min-height: 35vh;
+	justify-content: center;
+}
+.footer, #footera{
+	align-items: center;
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	color: gray;
+	text-decoration: none;
+	justify-content: center;
+	min-height: 10vh;
+}
