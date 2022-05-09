@@ -91,15 +91,37 @@
                 <div id="ME" style="display: none;">
                     <h1>Экономика</h1>
                     <h2>Деньги</h2>
-                    *команды экономики*
+                    <span class="com" data-tooltip="work">work</span> – заработать денег</p>
+                    <span class="com" data-tooltip="balance [user]">balance</span> – посмотреть банковский счёт</p>
+                    <span class="com" data-tooltip="give-money <user> <ammount> [comment]">give-money</span> – передать денежные средства другому пользователю</p>
                     <h2>Предметы</h2>
-                    *команды предметов*
+                    <span class="com" data-tooltip="inventory [user]">inventory</span> – посмотреть инвентарь</p>
+                    <span class="com" data-tooltip="item <предмет>">item</span> – посмотреть предмет</p>
+                    <span class="com" data-tooltip="shop [страница]">shop</span> – посмотреть магазин предметов</p>
+                    <span class="com" data-tooltip="buy <предмет [количество]">buy</span> – купить предмет из магазина</p>
+                    <span class="com" data-tooltip="sell-item <user> [количество] <предмет>">sell-item</span> – продать предмет из вашего инвентаря другому пользователю</p>
+                    <span class="com" data-tooltip="use <предмет> [количество]">use</span> – использовать предмет из вашего инвентаря</p>
                     <h2>Настройка</h2>
-                    *команды настройки*
+                    <span class="com" data-tooltip="add-money <количество> [user]">add-money</span> – добавить денежные средства</p>
+                    <span class="com" data-tooltip="add-money-role <количество> <роль>">add-money-role</span> – добавить денежные средства пользователям, имеющим указанную роль</p>
+                    <p><span class ="com " data-tooltip ="remove-money <количество> [user]" >remove-money</span> – отнять денежные средства у указангого пользователя</p>
+                    <p><span class ="com " data-tooltip ="remove-money-role <количество> <роль>">remove-money-role</span> – отнять денежные средства у участников, имеющих указанную роль</p>
+                    <p><span class ="com " data-tooltip ="reset-economy" >reset-economy</span> – сбросить параметры экрномики к заводским настройкам</p>
+                    <p><span class ="com " data-tooltip ="reset-money <user>" >reset-money</span> – обнулить счёт пользователя</p>
+                    <span class="com" data-tooltip="set-value <знак валюты>">set-value</span> – установить новый знак валюты</p>
+                    <span class="com" data-tooltip="edit-work">edit-work</span> – изменить доход от команды <span class="com">work</span></p>
+                    <span class="com" data-tooltip="create-item <имя предмета>">create-item</span> – создать предмет</p>
+                    <span class="com" data-tooltip="edit-item">edit-item</span> – изменить предмет</p>
+                    <span class="com" data-tooltip="add-item <user> <предмет> [количество]">add-item</span> – добавить предмет в инвентарь пользователя</p>
+                    <span class="com" data-tooltip="remove-item <user> <предмет> [количество]">remove-item</span> – забрать предмет из инвентаря пользователя</p>
+                    <span class="com" data-tooltip="delete-item <предмет>">delete-item</span> – удалить предмет</p>
+                    <span class="com" data-tooltip="reset-items">reser-items</span> – удалить <b>все</b> предметы на сервере</p>
+                    <span class="com" data-tooltip="reset-inventory <user>">reset-inventory</span> – очистить инвентарь пользователя</p>
+                    <span class="com" data-tooltip="start-balance <количество>">start-balance</span> – установить изначальное количество денежных средств у новых пользователей на сервере</p>
                 </div>
                 <div id="MS" style="display: none;">
                     <h1>Настройки</h1>
-                    <p><span class="com" data-tooltip="pfefix <new prefix> [new prefix] [new prefix] ...">prefix</span> – сменить префикс бота на сервере</p>
+                    <p><span class="com" data-tooltip="prefix <new prefix> [new prefix] [new prefix] ...">prefix</span> – сменить префикс бота на сервере</p>
                     <p><span class="com" data-tooltip="join-message <канал> [текст¹]">join-message</span> – назначить приветственное сообщение</p>
                     <p><span class="com" data-tooltip="bye-message <канал> [текст¹]">bye-message</span> – назначить прощальное сообщение</p>
                     <p><span class="com" data-tooltip="voice">voice</span> – создать панель управления личными голосовыми каналами</p>
@@ -115,6 +137,13 @@
 
 
             <div id="news"  style="display: none;">
+                <div>
+                    <h2 data-tooltip="9.5.2022"><span style="color: aqua">K U B İ C ≡</span>:</h2>
+                    <p>Я говорить красиво и правильно не умею, но могу сказать "С праздником"..<br>
+                        С праздником</p>
+                    <img src="https://c.tenor.com/AHWMdozvaEQAAAAd/9мая-по.gif" width="90%">
+                </div>
+                <hr>
                 <div class="News">
                     <h2 data-tooltip="5.5.2022"><span style="color:aqua">K U B İ C ≡</span>: Патч <span class="Version">v2.3.GRN_34</span>:</h2>
                     <p>Исправлен баг, когда при ожидании вашего сообщения, бот брал первое ваше сообщение из любого чата</p>
@@ -155,20 +184,34 @@
 
             
             <div id="info">
-                <h3><img src="https://media.discordapp.net/attachments/891651883289182268/972376433261436988/20210929_150812.png" alt="Kubik" width="3%"> <span style="font-size: 18px;">Kubik</span> –  многофункциональный Discord бот который сможет облегчить вам работу над сервером и развлечёт ваше сообщество.</h3>
+                <h3><img src="https://media.discordapp.net/attachments/891651883289182268/972376433261436988/20210929_150812.png" alt="Kubik" width="3%"> <span style="font-size: 18px;">Kubik</span> –  многофункциональный бот который сможет облегчить вам работу над сервером и развлечёт ваше сообщество.</h3>
                 <u><h2>Разработчики:</h2></u>
-                <ulli>
-                <h2>⠀⠀K U B İ C ≡<span style="color:gray">#4984</span></h2>
-                <h2>⠀⠀Velsonovskiy<span style="color:gray">#0024</span></h2>
+                <ul>
+                <h2 data-tooltip="Главный разработчик бота:D">K U B İ C ≡<span style="color:gray">#4984</span></h2>
+                <h2 data-tooltip="Комьюнити-менеджер">Velsonovskiy<span style="color:gray">#0024</span></h2>
                 </ul>
                 <hr>
+                <u><h2>Полезные ссылки:</h2></u>
+                <ul>
+                    <h2 onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=784052186220199956&permissions=8&scope=bot')">Добавить бота <span style="color: aqua;">Kubik</span> на сервер</h2>
+                    <h2 onclick="window.open('https://discord.gg/nXFTME2TUU')">Зайти на <span style="color: aqua">Сервер Поддержки</span> бота</h2>
+                    <h2 onclick="window.open('')" data-tooltip="Вы уже здесь :D">Перейти на <span style="color:aqua">Сайт</span> бота</h2>
+                </ul>
             </div>
         </div>
 		<div class='brdr'></div>
 		<div class='button-shadow'>
-			<button class='Button' onclick="window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=784052186220199956&permissions=8&scope=bot'">Добавить на сервер</button>
-			<button class='Button' onclick="window.location.href = 'https://discord.gg/nXFTME2TUU'">Поддержка</button>
+			<button class='Button' onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=784052186220199956&permissions=8&scope=bot')">Добавить на сервер</button>
+			<button class='Button' onclick="window.open('https://discord.gg/nXFTME2TUU')">Поддержка</button>
 		</div>
+        <div id="edit-background">
+            <!-- Здесь сделать изменение бэкграунда: темный, светлый, градиент -->
+            <select onchange="edit_background(value)">
+                <option value="dark">Темная</option>
+                <option value="light">Светлая</option>
+                <option value="Vels">Velsonovskiy</option>
+            </select>
+        </div>
 	</body>
     <script src="GeniusKubik.js"></script>
 </html>
