@@ -80,11 +80,6 @@ body{
     width: 50%;
     padding: 2%;;
 }
-@media (orientation: portrait) and (min-width: 900px){
-    #main {
-        width: 100%;
-    }
-}
 #select-module {
     padding: auto;
     font-size: 20px;
@@ -159,4 +154,12 @@ body{
 	text-decoration: none;
 	justify-content: center;
 	min-height: 10vh;
+}
+@media (orientation: portrait) and (min-width: 900px){/*Увеличение размера для пользователейс мобильных устройств*/
+    #main {
+        width: 100%;
+    }
+    .Button {
+        font-size: 44px;
+    }
 }
