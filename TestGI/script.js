@@ -1,1 +1,1 @@
-document.querySelector('p').innerHTML = document.location.href;
+document.querySelector('body').style.colour = '#' + string(document.location.href).split('=')[1];
