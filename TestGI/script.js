@@ -1,1 +1,1 @@
-alert(v)
+document.querySelector('p').innerHTML = document.location.href;
