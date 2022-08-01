@@ -1,0 +1,15 @@
+body {
+    background: rgb(44, 44, 44);
+    color: #fff;
+    overflow: hidden;
+}
+.Number {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 12rem;
+}
+.Number p {
+    margin: auto;
+    margin-top: 15%;
+}
