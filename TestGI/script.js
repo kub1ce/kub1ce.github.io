@@ -1,1 +1,1 @@
-document.querySelector('body').style.background  = '#' + string(document.location.href).split('=')[1];
+document.querySelector('body').style.background  = '#' + String(document.location.href).split('=')[1];
