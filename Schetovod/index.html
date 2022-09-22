@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>ABOBA</title>
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./ssc.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div class="darker"></div>
+        <!-- <div class="ENM">
+            <h1 id="enmh1">Team#_</h1>
+            <input type="text">
+            <div class="submit">Готово!</div>
+        </div> -->
+        <div class="info" onclick="this.style.display = 'none'">
+            Для настройки команды нажмте <b>ПКМ</b> по нужной стороне
+            <!-- <hr>
+            Колёсиком в любое место - определить победителя -->
+        </div>
+        <div class="left" oncontextmenu="editName('1'); return false">
+            <div class="tname" id="t1N">Team#1</div>
+            <div class="score" id="t1S">
+                0
+            </div>
+            <div class="point">
+                <span class="material-symbols-sharp" id="rem" onclick="point(1, '-');">do_not_disturb_on</span>
+                <span class="material-symbols-sharp" id="add" onclick="point(1, '+');">add_circle</span>
+            </div>
+        </div>
+        <div class="right" oncontextmenu="editName('2'); return false">
+            <div class="tname" id="t2N">Team#2</div>
+            <div class="score" id="t2S">
+                0
+            </div>
+            <div class="point">
+                <span class="material-symbols-sharp" id="rem" onclick="point(2, '-');">do_not_disturb_on</span>
+                <span class="material-symbols-sharp" id="add" onclick="point(2, '+');">add_circle</span>
+            </div>
+        </div>
+    </body>
+<script src="./2+2=22.js"></script>
+</html>
