@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Rotate</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            @-webkit-keyframes rotating /* Safari and Chrome */ {
+                from {
+                -webkit-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                }
+                to {
+                -webkit-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+                }
+            }
+            @keyframes rotating {
+                from {
+                    -ms-transform: rotate(0deg);
+                    -moz-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                to {
+                    -ms-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+            .text {
+                -webkit-animation: rotating 2s linear infinite;
+                -moz-animation: rotating 2s linear infinite;
+                -ms-animation: rotating 2s linear infinite;
+                -o-animation: rotating 2s linear infinite;
+                animation: rotating 2s linear infinite;
+                display: block;
+                width: max-content;
+                font-size: 5rem;
+                color: #fff;
+                margin: auto;
+            }
+            body {
+                background: #1a1a1a;
+                font-family: 'Nunito', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+        </style>
+        <div class="text"></div>
+    </body>
+<script>
+    n = document.querySelector('.text');
+    n.innerHTML = String(document.location.href).split('=')[1].split('%20').join(' ');
+</script>
+</html>

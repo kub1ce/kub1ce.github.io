@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Rotate</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .text {
+                text-align: center;
+                animation-name: spin, depth;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-duration: 3s;
+                font-size: 5rem;
+            }
+            @keyframes spin {
+                from { transform: rotateY(0deg); }
+                to { transform: rotateY(-360deg); }
+            }
+            @keyframes depth {
+                0% { text-shadow: 0 0 #fff; }
+                25% { text-shadow: 1px 0 #fff, 2px 0 #fff, 3px 0 #fff, 4px 0 #fff, 5px 0 #fff; }
+                50% { text-shadow: 0 0 #fff; }
+                75% { text-shadow: -1px 0 #fff, -2px 0 #fff, -3px 0 #fff, -4px 0 #fff, -5px 0 #fff; }
+                100% { text-shadow: 0 0 #fff; }
+            }
+            body {
+                background: #1a1a1a;
+                font-family: 'Nunito', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+                perspective: 500px;
+                color: #e3e2e2;
+            }
+        </style>
+        <div class="text"></div>
+    </body>
+<script>
+    n = document.querySelector('.text');
+    n.innerHTML = String(document.location.href).split('=')[1].split('%20').join(' ');
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Blink</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .text {
+                -webkit-animation: rotating 2s linear infinite;
+                -moz-animation: rotating 2s linear infinite;
+                -ms-animation: rotating 2s linear infinite;
+                -o-animation: rotating 2s linear infinite;
+                animation: rotating 2s linear infinite;
+                display: block;
+                width: max-content;
+                font-size: 5rem;
+                color: #fff;
+                /* top: 46%;
+                left: 46%;
+                position: absolute; */
+                margin: auto;
+                animation: blinker 1s linear infinite;
+            }
+            
+            @keyframes blinker {
+                50% {
+                opacity: 0;
+                }
+            }
+            body {
+                background: #1a1a1a;
+                font-family: 'Nunito', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+        </style>
+        <div class="text"></div>
+    </body>
+<script>
+    n = document.querySelector('.text');
+    n.innerHTML = String(document.location.href).split('=')[1].split('%20').join(' ');
+</script>
+</html>
