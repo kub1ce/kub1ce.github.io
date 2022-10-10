@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>None</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .text {
+                display: block;
+                width: max-content;
+                font-size: 5rem;
+                color: #fff;
+                margin: auto;
+            }
+            body {
+                background: #1a1a1a;
+                font-family: 'Nunito', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+        </style>
+        <div class="text"></div>
+    </body>
+<script>
+    n = document.querySelector('.text');
+    n.innerHTML = decodeURI(String(document.location.href).split('=')[1]);
+</script>
+</html>
