@@ -45,6 +45,6 @@
     </body>
 <script>
     n = document.querySelector('.text');
-    n.innerHTML = String(document.location.href).split('=')[1].split('%20').join(' ');
+    n.innerHTML = decodeURI(String(document.location.href).split('=')[1]);
 </script>
 </html>
