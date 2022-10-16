@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html {
+    font-size: 14px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    /* user-select: none; */
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+.muted {
+    color: #5b6c81;
+}
+@font-face {
+    font-family: 'Material Symbols Sharp';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialsymbolssharp/v60/gNNBW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4c2_whPnoY9ruReaU4bHmz74m0ZkGH-VBYe1x0TV6x4yFH8F-HxOezEL3sVTgJtfbYxOLojCL.woff2) format('woff2');
+}
+  
+.material-symbols-sharp {
+    font-family: 'Material Symbols Sharp';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    /* -webkit-font-feature-settings: 'liga'; */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-= */
+.prieview {
+    background: #00c3c3;
+    padding: 3.5rem;
+    text-align: center;
+    /* box-shadow: inset 0 15px 30px 10px rgba(0, 0, 0, .5); */
+    box-shadow: 0px -48px 32px -3px #152531 inset;
+}
+.prieview h1 {
+    font-size: 7rem;
+}
+.prieview h3 {
+    font-size: 3rem;
+}
+
+/* Hr_BLOCK */
+
+/* .hr_block {
+    background: #152531;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+#star-six {
+	width: 0;
+	height: 0;
+	border-left: 2rem solid transparent;
+	border-right: 2rem solid transparent;
+	border-bottom: 4rem solid #e5e500;
+	position: relative;
+}
+#star-six:after {
+	width: 0;
+	height: 0;
+	border-left: 2rem solid transparent;
+	border-right: 2rem solid transparent;
+	border-top: 4rem solid #e5e500;
+	position: absolute;
+	content: "";
+	top: 1.2rem;
+	left: -2rem;
+} */
+
+/* Q&A */
+.QA {
+    background: #152531;
+    color: #fff;
+    width: 100%;
+    padding: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-right: 1rem;
+    box-shadow: 0px -48px 32px -3px #000 inset;
+}
+.qa {
+    margin-bottom: 3rem;
+}
+.q {
+    text-align: left;
+    width: 50%;
+    font-size: 1.75rem;
+    text-indent: 2rem;
+    color: aqua;
+}
+.a {
+    text-align: right;
+    width: 60%;
+    font-size: 1.5rem;
+    margin-left: 38%;
+}
+#qa3 .a:first-child {
+    flex-direction: row;
+    display: flex;
+}
+.listplansicon span {
+    background-color: #fff;
+    color: #152531;
+    border-radius: 1rem;
+    vertical-align: -0.3rem;
+}
+.listplansicon span.active {
+    transform: rotate(180deg);
+}
+/* @keyframes rota {
+    to {
+        -webkit-transform: rotateZ(180deg);
+        -moz-transform: rotateZ(180deg);
+        -o-transform: rotateZ(180deg);
+        -ms-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+    }
+} */
+
+#qa3 .listplan {
+    display: none;
+    text-align: left;
+    text-indent: 20%;
+}
+#qa3 .listplan li {
+    list-style-type: none; /* Убираем маркеры у списка */
+}
+#qa3 .listplan li:before {
+    content: "» "; /* Добавляем в качестве маркера символ */
+    color: chocolate;
+}
+
+#qa3 .listplan_full {
+    display: none;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-= */
+
+.bottom {
+    background-color: #000;
+    padding: 2rem 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.author {
+    width: 100%;
+    text-align: right;
+    padding-right: 2rem;
+    font-size: 1rem;
+}
+.author a {
+    text-decoration: none;
+    color: #737373;
+}
