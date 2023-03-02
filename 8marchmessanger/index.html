@@ -24,7 +24,7 @@
             <div class="messages-block">
             </div>
             <div class="typing-block">
-                <textarea name="message" id="msg" cols="30" rows="10" style="resize: none"></textarea>
+                <textarea name="message" id="msg" cols="30" rows="10" style="resize: none; overflow: hidden;" onkeydown="if(event.keyCode == 13){sndmsg(); return false;}"></textarea>
                 <div class="send-btn" onclick="sndmsg();"><svg width="32" height="32" viewBox="0 0 0.96 0.96" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="M.095.091A.04.04 0 0 1 .139.084l.72.36a.04.04 0 0 1 0 .072l-.72.36A.04.04 0 0 1 .083.828L.185.52H.4a.04.04 0 1 0 0-.08H.185L.081.133A.04.04 0 0 1 .093.091z" clip-rule="evenodd"/></svg></div>
             </div>
         </main>
