@@ -1,0 +1,107 @@
+* {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Roboto;
+}
+head {
+    display: none;
+}
+body {
+    overflow: hidden;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+.top {
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    height: 10vh;
+    background: #4e4e4e;
+    width: 100vw;
+}
+.top hr {
+    width: 1px;
+    background: #00000050;
+    height: 80%;
+    border-radius: 100%;
+    margin: inherit 1rem inherit 0;
+
+}
+.top > div{
+    display: block;
+    width: auto;
+    margin: auto 0;
+}
+.top .menu-btn {
+    margin: auto 2rem;
+}
+.top .chat-icon img {
+    width: 2.5rem;
+    border-radius: 100%;
+    margin-right: 1rem;
+}
+.top .chat-settings {
+    margin-right: 2rem;
+    margin-left: auto;
+}
+main {
+    width: 100vw;
+    height: calc(100vh - (10vh));
+}
+main .messages-block {
+    background: url(https://png.pngtree.com/thumb_back/fh260/background/20201031/pngtree-8-march-women-day-background-banner-image_449696.jpg) no-repeat center;
+    background-size: 100%;
+    height: calc(100% - 2.5rem);
+    display: flex;
+    align-content: end;
+    flex-wrap: wrap;
+    width: 100%;
+}
+main .messages-block .msg {
+    width: 100%;
+    display: block;
+}
+main .messages-block p {
+    float: right;
+    background: limegreen;
+    padding: 0.4rem;
+    margin: 0.2rem;
+    border-radius: 1rem 1rem 0rem 1rem;
+    color: lavender;
+    font-size: 1.4rem;
+}
+main .messages-block p img {
+    display: inline-block;
+    width: 1.5rem;
+    vertical-align: -0.2rem;
+    margin: 0 0.1rem;
+
+}
+main .typing-block{
+    display: flex;
+    align-items: baseline;
+    background: #c1c1c1;
+    position: absolute;
+    bottom: 0%;
+    height: 2.5rem;
+    width: 100vw;
+}
+main .typing-block textarea {
+    resize: none;
+    display: block;
+    background: #00000050;
+    width: calc(100% - 3rem);
+    height: 2rem;
+    margin: auto 0;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+main .typing-block .send-btn {
+    margin: auto;
+}
