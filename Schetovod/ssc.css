@@ -5,83 +5,68 @@
     user-select: none;
 }
 
-/* body::-webkit-scrollbar {
-    visibility: hidden;
-    display: none;
-} */
-
-
 body {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    /* background: #1a1a1a; */
-    background: url(bg.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: #fff;
+    height: 100vh;
+    width: 100vw;
 }
 
-.darker {
-    content: '';
+.container {
+    height: 100%;
+    width: 100%;
+}
+.vkladks {
+    display: grid;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 3rem;
+    grid-template-columns: auto auto auto;
+}
+.invest {
+    background: #0000000f;
+    font-size: 1.2rem;
+    text-align: center;
+}
+main {
+    display: block;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-.ENM {
-    position: absolute;
-    background: #fff;
-    color: #000;
-    padding: 1rem;
-    font-size: 2rem;
-    border-radius: 1rem;
-    margin: 5rem;
-}
-.ENM input {
-    padding: 0.2rem;
-    font-size: 2rem;
 }
 
-
-.info {
-    background: #000000fc;
-    z-index: 100;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    font-size: 6rem;
+.inner.shet {
+    background: url('./bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
-
-.left, .right {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 10%;
-}
-.left:nth-child(), .right:nth-child() {
+.inner.shet .left, .inner.shet .right {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.tname {
+ .inner.shet .left .name, .inner.shet .right .name {
+    display: block;
+    text-align: center;
+    margin: auto 0;
+    color: #fff;
     font-size: 5rem;
+    width: 100%;
+ }
+.inner.shet .left .counter, .inner.shet .right .counter {
+    display: block;
+    text-align: center;
+    margin: auto 0;
+    color: #fff;
+    font-size: 16rem;
 }
-.score {
-    font-size: 11rem;
-    margin: 2rem 0rem;
-    margin-top: 2rem;
+
+.inner {
+    display: none;
+    width: 100%;
+    height: 100%;
 }
-.point {
-    margin-top: 2rem;
+.inner.active {
+    display: unset;
 }
-.point span {
-    font-size: 4rem!important;
-    margin: 0 2rem;
+.inner.active.shet {
+    display: grid;
 }
