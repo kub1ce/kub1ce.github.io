@@ -22,6 +22,8 @@
     margin: 0;
     color: var(--text-col);
     font-family: Oswald;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -46,7 +48,7 @@ body {
     height: 4rem;
 
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     z-index: 20;
 }
 
@@ -244,13 +246,52 @@ footer .logos img {
 }
 
 @media screen and (max-width: 800px) {
+    a.header {
+        font-size: 1rem;
+    }
     #aboutP1 p, #aboutP2 p {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     #prospects {
         clip-path: polygon(0 10%, 100% 0%, 100% 89%, 0% 100%);
+        padding: 6rem 0rem;
     }
     #team .teamber img {
         width: 50%
     }
+    #name p {
+        padding-top: 3rem;
+        font-size: 5rem;
+    }
+    #characteristics h1, #prospects h1 {
+        font-size: 3rem;
+    }
+    #table{
+        width: 100%;
+        padding: 2rem 0;
+    }    
+    #table p{
+        padding: 0 1rem;
+        font-size: 1.4rem;
+    }
+    #prospects p {
+        padding: 0 1rem;
+        font-size: 1.5rem;
+    }
+    #team {
+        padding: 6rem 0;
+    }
+    #team .teamber {
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+    #team .teamber div h2{
+        font-size: 2rem;
+    }
+    #team .teamber div p{
+        font-size: 1rem;
+    }
+
 }
