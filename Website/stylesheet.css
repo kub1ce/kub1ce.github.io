@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('./assets/Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('./assets/Caveat/Caveat-VariableFont_wght.ttf');
+}
+
+:root {
+    --bg-col: #464646;
+    --alt-col: #0fd25d;
+    --green: #187B3F;
+    --text-col: #fff;
+    --text-alt-col: #646464;
+    --gray: #BBB;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--text-col);
+    font-family: Oswald;
+}
+
+body {
+    background: var(--bg-col);
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ====================== */
+
+.headers {
+    background: var(--green);
+    font-family: Caveat;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 8px 9px rgba(0, 0, 0, .25);
+    height: 4rem;
+
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    z-index: 20;
+}
+
+a.header {
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    line-height: 4rem;
+    transition: all .5s;
+}
+a.header:hover, a.header:focus, a.header:active {
+    background: var(--alt-col);
+}
+
+#name {
+    background: var(--alt-col);
+    width: 100%;
+    height: calc(auto + 4rem);
+    text-align: right;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+}
+#name p {
+    padding: 2rem;
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+#aboutP1, #aboutP2 {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+
+#aboutP1 p, #aboutP2 p {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gray);
+    text-align: center;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+#aboutP1 img, #aboutP2 img {
+    width: 100%;
+    margin: auto;
+}
+
+#aboutP2 {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 6rem 2rem;
+    clip-path: polygon(0 13%, 100% 0%, 100% 87%, 0% 100%);
+    background: #fff;
+    line-height: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+#aboutP2 p {
+    color: var(--green);
+}
+
+#characteristics {
+    width: 100%;
+    margin: 6rem 0;
+}
+#characteristics h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+#table {
+    display: block;
+    width: 85%;
+    padding: 2rem;
+    margin: auto;
+}
+#table p {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 0 4rem;
+}
+#table .lft {
+    text-align: left;
+}
+#table .rgt {
+    text-align: right;
+}
+hr.line {
+    display: block;
+    width: 90%;
+    margin: .4rem auto;
+    border: 0;
+    height: 4px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 48.89%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+#prospects {
+    width: 100%;
+    padding: 6rem 2rem;
+    clip-path: polygon(0 23%, 100% 0%, 100% 87%, 0% 100%);
+    background: var(--alt-col);
+    color: var(--text-col);
+}
+
+#prospects h1 {
+    text-align: right;
+    width: 90%;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+#prospects p {
+    display: block;
+    width: 90%;
+    font-size: 3.6rem;
+    font-weight: 700;
+    padding: 0 4rem;
+    margin-bottom: 2rem;
+}
+#prospects p:nth-child(2n+1) {
+    text-align: right;
+}
+#prospects p span {
+    display: block;
+    width: 100%;
+    color: var(--text-alt-col)
+}
+
+#team {
+    width: 100%;
+    padding: 6rem 2rem;
+}
+#team h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    /* margin-bottom: 2rem; */
+}
+
+#team .teamber {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1/1;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    height: fit-content;
+    max-height: 10rem;
+    grid-auto-flow: dense;
+}
+#team .teamber img {
+    width: 25%;
+    margin: auto;
+    border-radius: 100%;
+}
+#team .teamber h2 {
+    text-align: center;
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin: auto;
+}
+#team .teamber p {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 6rem 2rem;
+    background: #1b1b1b;
+    color: var(--text-col);
+    clip-path: polygon(0 0, 100% 13%, 100% 100%, 0% 100%);
+}
+footer .logos h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-alt-col);
+}
+footer .logos img {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    #aboutP1 p, #aboutP2 p {
+        font-size: 2rem;
+    }
+    #prospects {
+        clip-path: polygon(0 10%, 100% 0%, 100% 89%, 0% 100%);
+    }
+    #team .teamber img {
+        width: 50%
+    }
+}
