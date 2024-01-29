@@ -48,7 +48,7 @@ body {
     height: 4rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     z-index: 20;
 }
 
@@ -71,7 +71,7 @@ a.header:hover, a.header:focus, a.header:active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
 }
 #name p {
-    padding: 2rem;
+    padding: 3rem;
     font-size: 7rem;
     font-weight: 700;
 }
@@ -113,6 +113,7 @@ a.header:hover, a.header:focus, a.header:active {
 }
 #aboutP2 p {
     color: var(--green);
+    margin-bottom: 5rem;
 }
 
 #characteristics {
@@ -198,16 +199,16 @@ hr.line {
 #team .teamber {
     display: grid;
     width: 100%;
-    aspect-ratio: 1/1;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 2rem;
-    height: fit-content;
-    max-height: 10rem;
+    height: auto;
     grid-auto-flow: dense;
+    overflow: hidden;
 }
 #team .teamber img {
     width: 25%;
     margin: auto;
+    aspect-ratio: 1/1;
     border-radius: 100%;
 }
 #team .teamber h2 {
@@ -251,6 +252,16 @@ footer .logos img {
     }
     #aboutP1 p, #aboutP2 p {
         font-size: 1.5rem;
+        display: block;
+    }
+    #aboutP2 {
+        display: block;
+        text-align: justify;
+    }
+    #aboutP2 p span {
+        text-align: justify;
+        width: 100%;
+        display: block;
     }
     #prospects {
         clip-path: polygon(0 10%, 100% 0%, 100% 89%, 0% 100%);
@@ -269,7 +280,7 @@ footer .logos img {
     #table{
         width: 100%;
         padding: 2rem 0;
-    }    
+    }  
     #table p{
         padding: 0 1rem;
         font-size: 1.4rem;
