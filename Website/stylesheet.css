@@ -287,6 +287,9 @@ footer .logos img {
         height: auto;
         grid-template-columns: 1fr 1fr;
     }
+    #team .teamber div {
+        overflow: hidden;
+    }
     #team .teamber div h2{
         font-size: 2rem;
     }
