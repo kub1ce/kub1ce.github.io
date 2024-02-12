@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Система Земля-Луна. Планеты Земной группы и планеты - гиганты</title>
+</head>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: cursive;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient( 150deg, #1a0b1b, #050e1b, #1e0a32);
+}
+.background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    user-select: none;
+}
+.background__star {
+    aspect-ratio: 1/1;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+.slider {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.slider__container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.slider__item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.slider__item.outgoing {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.facts { max-width: 45%;}
+.facts h1{ font-size: 3vw;}
+.facts ul li{font-size: 2vw;}
+img {width: 50vw;}
+</style>
+<body onkeypress="replace_stars()">
+    <div class="background"></div>
+    <div class="slider">
+        <div class="slider__container">
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Меркурий</h1>
+                    <ul>
+                        <li>Самая маленькая планета в Солнечной системе</li>
+                        <li>Нет атмосферы</li>
+                        <li>Высокая скорость вращения вокруг своей оси</li>
+                    </ul>
+                </div>
+                <img src="./mercury.png" alt="Меркурий">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Венера</h1>
+                    <ul>
+                        <li>Венера вращается вокруг своей оси в противоположном направлении по сравнению с большинством других планет</li>
+                        <li>Состоит в основном из углекислого газа</li>
+                        <li>Самая горячая планета во всей Солнечной системе</li>
+                    </ul>
+                </div>
+                <img src="./venere.png" alt="Венера">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Земля</h1>
+                    <ul>
+                        <li>Единственная планета, на которой есть жизнь</li>
+                        <li>Самая плотная планета Солнечной системы</li>
+                        <li>99% золотого запаса планеты скрыто в её ядре</li>
+                    </ul>
+                </div>
+                <img src="./earth.png" alt="Земля">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Марс</h1>
+                    <ul>
+                        <li>Самая красная планета в Солнечной системе</li>
+                        <li>Имеет самую низкую гравитацию среди планет земной группы</li>
+                        <li>Спутники Марса получили свои названия в честь братьев-близнецов из древнегреческой мифологии.</li>
+                    </ul>
+                </div>
+                <img src="./mars.png" alt="Марс">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Юпитер</h1>
+                    <ul>
+                        <li>Самая большая планета в Солнечной системе</li>
+                        <li>Имеет самый большой океан в Солнечной системе — правда, он наполнен водородом, а не водой</li>
+                        <li>Самое сильное магнитное поле среди планет Солнечной системы.</li>
+                    </ul>
+                </div>
+                <img src="./upiter.png" alt="Юпитер">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Сатурн</h1>
+                    <ul>
+                        <li>Самая низкая плотность (почти в 2 раза меньше, чем у воды)</li>
+                        <li>Вокруг него обращаются 83 спутника, и, вероятно, их на самом деле больше, просто не все еще обнаружены</li>
+                        <li>Известен своими кольцами, состоящими из льда и пыли</li>
+                    </ul>
+                </div>
+                <img src="./saturn.png" alt="Сатурн">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Уран</h1>
+                    <ul>
+                        <li>Масса Урана в 14 с половиной раз превосходит массу Земли.</li>
+                        <li>Имеет уникальный наклон оси вращения, из-за чего сезонные изменения на планете очень заметны</li>
+                    </ul>
+                </div>
+                <img src="./uran.png" alt="Уран">
+            </div>
+            
+            <div class="slider__item">
+                <div class="facts">
+                    <h1>Нептун</h1>
+                    <ul>
+                        <li>Ледяной гигант</li>
+                        <li>Самую высокую скорость ветра среди планет Солнечной системы</li>
+                        <li>На нём идут дожди из алмазов</li>
+                    </ul>
+                </div>
+                <img src="./neptun.png" alt="Нептун">
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    bg = document.querySelector(".background");
+    for (var i = 0; i < 50; i++) {
+        bg.innerHTML += '<div class="background__star" style="top:' + getRandomInt(window.screen.height) + 'px; left:' + getRandomInt(window.screen.width) + 'px; width:' + getRandomInt(5) + 'px;"></div>';
+    }
+
+    function replace_stars(){
+        for (const star of bg.children) {
+            star.style.top = getRandomInt(window.screen.height) + 'px';
+            star.style.left = getRandomInt(window.screen.width) + 'px';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.slider__container');
+        let items = Array.from(container.children);
+        let activeIndex = 0;
+    
+        items[activeIndex].classList.add('active');
+    
+        const changeSlide = (nextIndex) => {
+            items[activeIndex].classList.add('outgoing');
+            items[nextIndex].classList.add('active', 'incoming');
+            setTimeout(() => {
+                items[activeIndex].classList.remove('active', 'outgoing');
+                items[nextIndex].classList.remove('incoming');
+                activeIndex = nextIndex;
+            }, 1000);
+        };
+    
+        document.querySelector('.slider').addEventListener('click', (e) => {
+            // if (e.clientX > window.innerWidth / 2) {
+                // Click on the right side
+                const nextIndex = (activeIndex + 1) % items.length;
+                changeSlide(nextIndex);
+                replace_stars();
+            // }
+        });
+    });
+</script>
+</html>
