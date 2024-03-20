@@ -29,8 +29,9 @@ function shuffle(array) {
     return array;
 }
 
+// const delay = ms => new Promise(res => setTimeout(res, ms));
 
-function spinWheel() {
+function spinWheel (){
     document.getElementById('spin').play();
     var wheel = document.getElementById('wheel');
     var segments = wheel.getElementsByClassName('segment');
@@ -57,7 +58,10 @@ function spinWheel() {
     wheel.addEventListener('transitionend', function handleTransitionEnd() {
 
         // Обновляем отображаемое число
-        selectedNumberSpan.textContent = segments[QN].getAttribute('data-number');
+        selectedNumberSpan.textContent = `N${segmentToStopOn+1}`;
+        document.getElementById(`N${segmentToStopOn+1}`).style.color = `red`;
+        // await delay(2000);
+        document.getElementById(`N${segmentToStopOn+1}`).innerHTML = `<img src="./Images/right-arrow.png">`;
 
         if (QN == 10){
             document.getElementById('question').innerHTML = Questions[QN].text;

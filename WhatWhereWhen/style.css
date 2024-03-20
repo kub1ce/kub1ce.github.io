@@ -73,6 +73,14 @@ body {
     color: #d83737;
     color: #fff;
     font-weight: 700;
+    padding-left: 3rem;
+}
+
+.segment .datanum img {
+    display: block;
+    width: 4rem;
+    margin: auto;
+    aspect-ratio: 1;
 }
 
 .segment:first-child {
