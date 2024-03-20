@@ -11,22 +11,22 @@
     <div id="wheel-container">
         <div id="arrow"></div> <!-- Стрелочка указывает на сегмент -->
         <div id="wheel">
-            <div class="segment" style="background-color: #FF0000;" data-number="1"><div class="datanum">1</div></div>
-            <div class="segment" style="background-color: #FF7F00;" data-number="2"><div class="datanum">2</div></div>
-            <div class="segment" style="background-color: #FFFF00;" data-number="3"><div class="datanum">3</div></div>
-            <div class="segment" style="background-color: #7FFF00;" data-number="4"><div class="datanum">4</div></div>
-            <div class="segment" style="background-color: #00FF00;" data-number="5"><div class="datanum">5</div></div>
-            <div class="segment" style="background-color: #00FF7F;" data-number="6"><div class="datanum">6</div></div>
-            <div class="segment" style="background-color: #00FFFF;" data-number="7"><div class="datanum">7</div></div>
-            <div class="segment" style="background-color: #007FFF;" data-number="8"><div class="datanum">8</div></div>
-            <div class="segment" style="background-color: #0000FF;" data-number="9"><div class="datanum">9</div></div>
-            <div class="segment" style="background-color: #7F00FF;" data-number="10"><div class="datanum">10</div></div>
-            <div class="segment" style="background-color: #FF00FF;" data-number="11"><div class="datanum">11</div></div>
-            <div class="segment" style="background-color: #ff0084;" data-number="12"><div class="datanum">12</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="1"><div class="datanum">1</div></div>
+            <div class="segment" style="background-color: #777;" data-number="2"><div class="datanum">2</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="3"><div class="datanum">3</div></div>
+            <div class="segment" style="background-color: #777;" data-number="4"><div class="datanum">4</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="5"><div class="datanum">5</div></div>
+            <div class="segment" style="background-color: #777;" data-number="6"><div class="datanum">6</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="7"><div class="datanum">7</div></div>
+            <div class="segment" style="background-color: #777;" data-number="8"><div class="datanum">8</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="9"><div class="datanum">9</div></div>
+            <div class="segment" style="background-color: #777;" data-number="10"><div class="datanum">10</div></div>
+            <div class="segment" style="background-color: #bbb;" data-number="11"><div class="datanum">11</div></div>
+            <div class="segment" style="background-color: #777;" data-number="12"><div class="datanum">12</div></div>
         </div>
     </div>
 
-    <div id="question" onclick="this.style.display = 'none'; return false"></div>
+    <div id="question" onclick="this.style.display = 'none'; document.getElementById('pause').play(); return false"></div>
 
     <div id="playVS-container" onclick="this.style.display = 'none'; return false">
         <div>Против Вас играет:</div>
@@ -34,8 +34,17 @@
         <div id="Name">NAME</div>
     </div>
     
-    <button id="spinButton">Крутить Колесо</button>
-    <div id="result">Выбранное число: <span id="selected-number"></span></div>
+    <button id="spinButton" style="display: none;">Крутить Колесо</button>
+    <div id="result"><span id="selected-number"></span></div>
+
+
+    <!-- AUDIO SOURCES -->
+    <audio id="gong" src="./Sounds/gong.mp3" \style="display: none;"></audio>
+    <audio id="pause" src="./Sounds/pause1.mp3" style="display: none;"></audio>
+    <audio id="start" src="./Sounds/start_game.mp3" style="display: none;"></audio>
+    <audio id="timer" src="./Sounds/timer_start.mp3" style="display: none;"></audio>
+    <audio id="spin" src="./Sounds/volchok.mp3" style="display: none;"></audio>
+    <audio id="black" src="./Sounds/yashik.mp3" style="display: none;"></audio>
 </body>
 <script src="script.js"></script>
 </html>

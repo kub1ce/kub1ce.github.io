@@ -1,6 +1,6 @@
 const wheel = document.getElementById('wheel');
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-// ! let arr = [0];
+// let arr = [0, 1, 2, 3];
 arr = shuffle(arr);
 console.log("%c>>> Индексный порядок:", 'background: #222; color: #bada55', arr);
 let usedSegments = [];
@@ -31,6 +31,7 @@ function shuffle(array) {
 
 
 function spinWheel() {
+    document.getElementById('spin').play();
     var wheel = document.getElementById('wheel');
     var segments = wheel.getElementsByClassName('segment');
     var selectedNumberSpan = document.getElementById('selected-number');
@@ -54,15 +55,23 @@ function spinWheel() {
 
     // Обрабатываем окончание анимации
     wheel.addEventListener('transitionend', function handleTransitionEnd() {
-        // Обновляем отображаемое число
-        selectedNumberSpan.textContent = segments[segmentToStopOn].getAttribute('data-number');
 
-        // Изменяем данные о вопросе и изменяем их
-        document.getElementById('question').innerHTML = Questions[segmentToStopOn].text;
-        document.getElementById('question').style.display = 'block';
-        document.getElementById('Name').innerHTML = Questions[segmentToStopOn].vsN;
-        document.getElementById('photo').innerHTML = `<img src="${Questions[segmentToStopOn].vsI}" alt="Пользователь не оставил фото 😖">`;
-        document.getElementById('playVS-container').style.display = 'grid';
+        // Обновляем отображаемое число
+        selectedNumberSpan.textContent = segments[QN].getAttribute('data-number');
+
+        if (QN == 10){
+            document.getElementById('question').innerHTML = Questions[QN].text;
+            document.getElementById('question').style.display = 'block';
+            document.getElementById('black').play();
+        } else {
+            // Изменяем данные о вопросе и изменяем их
+            document.getElementById('question').innerHTML = Questions[QN].text;
+            document.getElementById('question').style.display = 'block';
+            document.getElementById('Name').innerHTML = Questions[QN].vsN;
+            document.getElementById('photo').innerHTML = `<img src="${Questions[QN].vsI}" alt="Пользователь не оставил фото 😖">`;
+            document.getElementById('playVS-container').style.display = 'grid';
+        }
+
 
         // Сбрасываем прокрутку для следующего использования
         wheel.style.transition = 'none';
@@ -86,6 +95,50 @@ document.getElementById('spinButton').addEventListener('click', spinWheel);
 
 
 
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 65){
+        // A - GONG
+        document.getElementById('gong').play();
+    } else if(e.keyCode == 66){
+        // B - BLACK
+        document.getElementById('black').play();
+    } else if (e.keyCode == 67) {
+        // ! C - PAUSE
+        var audios = document.getElementsByTagName('audio');
+        for(var i = 0, len = audios.length; i < len;i++){
+            if(audios[i] != e.target){
+                audios[i].pause();
+            }
+        
+        }
+    } else if (e.keyCode == 68) {
+        // ! D - STOP
+        var audios = document.getElementsByTagName('audio');
+        for(var i = 0, len = audios.length; i < len;i++){
+            if(audios[i] != e.target){
+                audios[i].pause();
+                audios[i].currentTime = 0;
+            }
+        
+        }
+    } else if(e.keyCode == 69){
+        // E - Pause
+        document.getElementById('pause').play();
+    } else if(e.keyCode == 70){
+        // F - Timer
+        document.getElementById('timer').play();
+    } else if(e.keyCode == 71){
+        // G - Start
+        document.getElementById('start').play();
+    } else if(e.keyCode == 72){
+        // * H - SPIN WHEEL
+        // document.getElementById('start').play();
+        spinWheel();
+    }
+});
+
+
+
 
 
 
@@ -99,18 +152,58 @@ document.getElementById('spinButton').addEventListener('click', spinWheel);
 
 Questions = {
     "0" : {
-        "text" : "Какой всем известный термин больше не употребляется в своем изначальном значении внутри нашего класса?",
-        "vsN" : "Артём",
-        "vsI" : "./Images/Levi michi.jpg",
+        "text" : `Даже в кабинете химии меньше химикатов чем в этом месте. Про что идёт речь?`,
+        "vsN" : "Шевченко Ян Владиславович",
+        "vsI" : "./Images/Yan.jpg",
     },
     "1" : {
-        "text" : "Даже в кабинете химии меньше химикатов чем в этом месте. Про что идёт речь?",
-        "vsN" : "Артём",
-        "vsI" : "./Images/Levi michi.jpg",
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/LV.mp4"></video>`,
+        "vsN" : "Старцева Лариса Вячеславовна",
+        "vsI" : "./Images/SLV(t).jpg",
+    },
+    "2" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/AK.mp4"></video>`,
+        "vsN" : "Гилязова Альфия Курбановна",
+        "vsI" : "./Images/GAK.jpg",
+    },
+    "3" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/EN.mp4"></video>`,
+        "vsN" : "Лукина Екатерина Николаевна",
+        "vsI" : "./Images/EN.jpg",
     },
     "4" : {
-        "text" : `<video controls="controls" width="auto" height="90%" src="./Images/Black Clover - Opening 4 _ Guess Who Is Back.mp4"></video>`,
-        "vsN" : "Артём",
-        "vsI" : "./Images/Levi michi.jpg",
+        "text" : `Какой всем известный термин больше не употребляется в своем изначальном значении внутри нашего класса?`,
+        "vsN" : "Пашаzxcкий Никита Антонович",
+        "vsI" : "./Images/NN.jpg",
+    },
+    "5" : {
+        "text" : `Один волшебник сказал, что запросто может в центре комнаты поставить пустую бутылку и вползти в нее. Как он это сделает?`,
+        "vsN" : "Рожков Андрей Сергеевич",
+        "vsI" : "./Images/A.jpg",
+    },
+    "6" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/EF.mp4"></video>`,
+        "vsN" : "Якубовская Елена Ивановна",
+        "vsI" : "./Images/YEV.jpg",
+    },
+    "7" : {
+        "text" : `Какой учитель имел настолько большое влияние, что мог заставить учеников выпить?`,
+        "vsN" : "Богданов Артём Евгеньевич",
+        "vsI" : "./Images/Art.jpg",
+    },
+    "8" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/AL.mp4"></video>`,
+        "vsN" : "Бабетов Алексей Алимович",
+        "vsI" : "./Images/BAA.jpg",
+    },
+    "8" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/AL.mp4"></video>`, // ! =====
+        "vsN" : "Воронова Наталья Васильевна",
+        "vsI" : "./Images/VNV.jpg",
+    },
+    "10" : {
+        "text" : `Чёрный ящик`,
+        "vsN" : "",
+        "vsI" : "",
     },
 }
