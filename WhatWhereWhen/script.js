@@ -1,5 +1,5 @@
 const wheel = document.getElementById('wheel');
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 // let arr = [0, 1, 2, 3];
 arr = shuffle(arr);
 console.log("%c>>> Индексный порядок:", 'background: #222; color: #bada55', arr);
@@ -74,6 +74,10 @@ function spinWheel (){
             document.getElementById('Name').innerHTML = Questions[QN].vsN;
             document.getElementById('photo').innerHTML = `<img src="${Questions[QN].vsI}" alt="Пользователь не оставил фото 😖">`;
             document.getElementById('playVS-container').style.display = 'grid';
+
+            // if (QN == 9){
+            //     document.getElementById('NVTXT').style.display = 'block';
+            // }
         }
 
 
@@ -200,8 +204,8 @@ Questions = {
         "vsN" : "Бабетов Алексей Алимович",
         "vsI" : "./Images/BAA.jpg",
     },
-    "8" : {
-        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/AL.mp4"></video>`, // ! =====
+    "9" : {
+        "text" : `<video controls="controls" width="auto" height="90%" src="./Videos/NV.mp4"></video>`, // ! =====
         "vsN" : "Воронова Наталья Васильевна",
         "vsI" : "./Images/VNV.jpg",
     },

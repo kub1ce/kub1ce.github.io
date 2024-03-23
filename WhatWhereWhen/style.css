@@ -122,7 +122,7 @@ body {
     font-size: 1rem;
 }
 
-#question {
+#question, #NVTXT {
     display: none;
 
     position: absolute;
@@ -135,6 +135,10 @@ body {
     line-height: 100%;
 
     z-index: 200;
+}
+
+#NVTXT {
+    z-index: 199;
 }
 
 #playVS-container {
