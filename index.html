@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Марина, с днём рождения!</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,water_drop" />
+</head>
+<style>
+    * {
+        overflow: hidden;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .material-symbols-rounded {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+        vertical-align: -.4rem;
+    }s
+    body {
+        background: #eff0f2;
+        padding: 0;
+        border: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+    #serch {
+        display: flex;
+        width: calc(100% - 20px);
+        height: 3rem;
+        justify-content: space-between;
+        margin: 10px;
+        border: 2px solid #f3cd44;
+        background: #fff;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+    input {
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        overflow: hidden;
+        font-size: 16px;
+        padding: 8px;
+    }
+    input:active, input:focus {
+        border-color: transparent;
+        border: 0;
+        overflow: hidden;
+        outline: none;
+    }
+    #serch button {
+        border: none;
+        background: #f3cd44;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 8px 16px;
+        overflow: hidden;
+        margin: 4px;
+    }
+
+    #stat {
+        display: flex;
+        width: calc(100% - 40px);
+        height: 2.5rem;
+        justify-content: space-between;
+        margin: 10px 20px;
+        font-weight: bold;
+    }
+    #tip {
+        font-size: 12px;
+        font-style: italic;
+        display: flex;
+        margin-top: 0;
+        color: gray;
+        overflow: hidden;
+        font-weight: normal;
+    }
+
+    #promo {
+        width: calc(100% - 40px);
+        height: 6rem;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        padding-right: 10px;
+    }
+    img {
+        aspect-ratio: 1;
+        overflow: hidden;
+        height: 100%;
+    }
+    #promo p {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        height: 100%;
+        overflow: hidden;
+        text-align: justify;
+    }
+
+    main {
+        background: #fff;
+        width: 100%;
+        height: -webkit-fill-available;
+        border-radius: 12px 12px 0 0;
+        margin: 0;
+        overflow: hidden;
+        padding: 8px;
+    }
+
+    #dzen {
+        display: flex;
+        width: calc(100% - 40px);
+        height: 3.5rem;
+        justify-content: space-between;
+        margin: 5px;
+        border: 1px solid #eff0f2;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 0 10px;
+    }
+    #dzen p {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        height: 100%;
+        text-align: justify;
+        margin: 0;
+        font-weight: bold;
+        overflow: hidden;
+        color: gray;
+    }
+    #dzen span {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        font-size: 2.5rem;
+        text-align: justify;
+        margin: 0;
+        font-weight: bold;
+        color: gray;
+        aspect-ratio: 1;
+        height: 2.5rem;
+        background-color: #eff0f2;
+        border-radius: 12px;
+        margin: auto 2px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    #city {
+        width: calc(100% - 40px);
+        height: auto;
+        margin: 5px;
+        border: 1px solid #eff0f2;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px;
+    }
+    #city h2 {
+        width: 100%;
+        margin: 0;
+    }
+    #city #buttons {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    #city #buttons button {
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 8px 16px;
+        margin: 4px;
+        word-wrap: none;
+        text-wrap: none;
+        white-space: nowrap;
+        width: auto;
+        text-align: center;
+    }
+
+    #news h2 {
+        color: gray;
+    }
+    #news #tags {
+        overflow: hidden;
+        display: flex;
+        padding-right: 12px;
+        width: 95%;
+        margin: 0 0 1rem 0;
+    }
+    #news #tags .tag {
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        height: 100%;
+        text-align: justify;
+        margin: 0 auto;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 16px;
+    }
+    #news #tags p#active {
+        overflow: hidden;
+        background-color: #eff0f2;
+    }
+
+    #news #newslist {
+        overflow: hidden;
+        overflow-y: scroll;
+        max-height: 50vh;
+        padding-bottom: 100vh;
+    }
+    #news .new {
+        width: calc(95% - 40px);
+        height: auto;
+        display: grid;
+        grid-template-columns: 10% auto;
+        gap: 10px;
+    }
+    #news .new p.nicn {
+        height: 100%;
+        line-height: 1;
+        text-align: center;
+        color: #0318a0;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div id="serch">
+        <input type="text" placeholder="Поиск Андрея">
+        <button>Найти</button>
+    </div>
+    <div id="stat">
+        <div id="weather">🔆+100° <p id="tip">Вы сегодня такая горячая</p></div>
+        <div id="curency">$3,01    €3,01    <span class="material-symbols-rounded">
+            water_drop
+        </span>52</div>
+    </div>
+    <div id="promo">
+        <img src="./image.png" alt="">
+        <p>Вдупляем недвупляемых!<br><br>Вдупление невдупляющих котят в курс ядерной физики 7го класса - бесплатно (19+)</p>
+    </div>
+
+    <main>
+        <div id="dzen">
+            <p>💥 Дзен Календарь</p>
+            <span class="material-symbols-rounded">account_circle</span>
+        </div>
+
+        <div id="city">
+            <h2>Ваш город - Олимп?</h2>
+            <div id="buttons">
+                <button style="color: #fff; background: #000">А где ещё может</button>
+                <button>жить такая богиня?</button>
+            </div>
+        </div>
+
+        <div id="news">
+            <h2>▨ Новости</h2>
+            <div id="tags">
+                <p class="tag" id="active">Главное</p>
+                <p class="tag">Олимп</p>
+                <p class="tag">Свежее</p>
+                <p class="tag">РКН</p>
+                <p class="tag">Спорт</p>
+            </div>
+
+            <div id="newslist">
+                <div class="new"><p class="nicn">▨</p><p>У Марины День рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>В честь дня рождения Марины пришельцы отложили уничтожение Земли на неопределённый срок</p></div>
+                <div class="new"><p class="nicn">▨</p><p>«Всем по баллу БРС» - Обабков И.Н. и Кокшаров Н.Н. поздравили студентов с днём рождения Марины</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Нейросети массово сошли с ума и на любые вопросы отвечают «Марина, с днём рождения!»</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Парень из Екатеринбурга пешком отправился в Тагил, чтобы..</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Топ разочарований на новый год:<br>1. Не найти Марину под ёлкой<br>2. <i style="color: gray;">читать далее...</i></p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+                <div class="new"><p class="nicn">▨</p><p>Марина, с днём рождения!</p></div>
+            </div>
+        </div>
+        <div id="btmn" style="height: 20vh;"></div>
+    </main>
+</body>
+</html>
