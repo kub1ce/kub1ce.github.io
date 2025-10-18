@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Моё Web App</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	  <h1>Привет из Telegram Web App!</h1>
+	  <div id="user-info"></div>
+	  <button id="send-data">Отправить данные боту</button>
+	  <hr>
+	  <button id="close">Закрыть</button>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+	const tg = window.Telegram.WebApp;
+
+	tg.ready();
+	tg.expand();
+
+	const user = tg.initDataUnsafe.user;
+	document.getElementById('user-info').innerText =
+	  	`Привет, ${user?.first_name || 'Пользователь'}! ID: ${user?.id}`;
+
+	document.getElementById('send-data').addEventListener('click', () => {
+	  	tg.sendData('Привет из веб-приложения!');
+	});
+
+	document.getElementById('close').addEventListener('click', () => {
+	  	tg.close();
+	});
+  </script>
+</body>
+</html>
